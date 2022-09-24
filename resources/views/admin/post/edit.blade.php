@@ -105,6 +105,12 @@
                                             {{ $category->title }}</option>
                                     @endforeach
                                 </select>
+
+                                @error('category_id')
+                                <div class="text-danger">
+                                    {{ $message }}
+                                </div>
+                                @enderror
                             </div>
 
                             <div class="form-group">
@@ -117,6 +123,12 @@
                                             {{ is_array( $post->tags->pluck('id')->toArray()) && in_array($tag->id, $post->tags->pluck('id')->toArray()) ? 'selected' : '' }} value="{{ $tag->id }}">{{ $tag->title }}</option>
                                     @endforeach
                                 </select>
+
+                                @error('tag_ids')
+                                <div class="text-danger">
+                                    {{ $message }}
+                                </div>
+                                @enderror
                             </div>
 
                             <div class="form-group">

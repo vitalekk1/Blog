@@ -33,4 +33,23 @@ class UpdateRequest extends FormRequest
             'tag_ids.*' => 'nullable|integer|exists:tags,id',
         ];
     }
+
+    public function messages()
+    {
+        return [
+            'title.required' => 'This field is required',
+            'title.string' => 'Data must match the string type',
+            'content.string' => 'Data must match the string type',
+            'content.required' => 'This field is required',
+            'preview_image.required' => 'This field is required',
+            'preview_image.file' => 'You must select a file',
+            'main_image.required' => 'This field is required',
+            'main_image.file' => 'You must select a file',
+            'category_id.required' => 'This field is required',
+            'category_id.integer' => 'Сategory id must be a number',
+            'category_id.exists' => 'Сategory id must be in the database',
+            'tag_ids.array' => 'Need to send an array of data',
+
+        ];
+    }
 }
