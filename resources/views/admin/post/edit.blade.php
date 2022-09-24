@@ -12,9 +12,10 @@
                     </div><!-- /.col -->
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
-                            <li class="breadcrumb-item"><a href="#">Home</a></li>
-                            <li class="breadcrumb-item"><a href="#">Post</a></li>
-                            <li class="breadcrumb-item active">Edit post</li>
+                            <li class="breadcrumb-item"><a href="{{ route('admin.main.index') }}">Main page</a></li>
+                            <li class="breadcrumb-item"><a href="{{ route('admin.post.index') }}">Posts</a></li>
+                            <li class="breadcrumb-item active"><a href="{{ route('admin.post.show', $post->id) }}">{{ $post->title }}</a></li>
+                            <li class="breadcrumb-item active">Edit</li>
                         </ol>
                     </div><!-- /.col -->
                 </div><!-- /.row -->
