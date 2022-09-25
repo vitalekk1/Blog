@@ -27,6 +27,15 @@
                     <li class="nav-item active">
                         <a class="nav-link" href="{{ route('main.index') }}">Blog <span class="sr-only">(current)</span></a>
                     </li>
+                    <li class="nav-item active">
+                        @auth()
+                            <a class="nav-link" href="{{ route('personal.main.index') }}">Account</a>
+                        @endauth
+
+                        @guest()
+                                <a class="nav-link" href="{{ route('personal.main.index') }}">Login</a>
+                        @endguest
+                    </li>
 
                 </ul>
             </div>

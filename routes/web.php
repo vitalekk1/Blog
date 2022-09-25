@@ -18,6 +18,10 @@ Route::get('/', App\Http\Controllers\Main\IndexController::class)->name('main.in
 Route::prefix('posts')->group(function () {
     Route::get('/', App\Http\Controllers\Post\IndexController::class)->name('post.index');
     Route::get('/{post}', App\Http\Controllers\Post\ShowController::class)->name('post.show');
+
+    Route::prefix('{post}/comments')->group(function (){
+        Route::post('/', App\Http\Controllers\Post\Comment\StoreController::class)->name('post.comment.store');
+    });
 });
 
 
