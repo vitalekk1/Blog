@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', IndexController::class);
+Route::get('/', IndexController::class)->name('main.index');
 
 Route::prefix('personal')->middleware(['auth', 'verified'])->group(function () {
     Route::get('/', \App\Http\Controllers\Personal\Main\IndexController::class)->name('personal.main.index');
