@@ -22,6 +22,9 @@ Route::prefix('posts')->group(function () {
     Route::prefix('{post}/comments')->group(function (){
         Route::post('/', App\Http\Controllers\Post\Comment\StoreController::class)->name('post.comment.store');
     });
+    Route::prefix('{post}/likes')->group(function (){
+        Route::post('/', App\Http\Controllers\Post\Like\StoreController::class)->name('post.like.store');
+    });
 });
 
 

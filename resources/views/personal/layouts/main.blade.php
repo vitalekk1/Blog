@@ -42,6 +42,11 @@
                 </li>
             </ul>
             <ul class="navbar-nav">
+                @if(((int)auth()->user()->role == 1))
+                    <li class="nav-item mx-2">
+                        <a class="btn btn-outline-primary" href="{{ route('admin.main.index') }}">Admin panel</a>
+                    </li>
+                @endif
                 <li class="nav-item">
                     <form action="{{ route('logout') }}" method="post">
                         @csrf

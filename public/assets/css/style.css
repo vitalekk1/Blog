@@ -7729,6 +7729,10 @@ a.text-dark:hover, a.text-dark:focus {
   color: #7d848b;
   margin-bottom: 67px; }
 
+.image-center {
+    text-align: center;
+}
+
 .blog-post .blog-post-featured-img {
   margin-bottom: 44px; }
 
